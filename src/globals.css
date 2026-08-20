@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #020817;
+  --card: #ffffff;
+  --card-foreground: #020817;
+  --popover: #ffffff;
+  --popover-foreground: #020817;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #020817;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0f172a; /* Slate 900 */
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #22d3ee; /* Cyan 400 */
+  --primary-foreground: #020817;
+  --secondary: #6366f1; /* Indigo 500 */
+  --secondary-foreground: #ffffff;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #22d3ee;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+  --border: #334155;
+  --input: #334155;
+  --ring: #22d3ee;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 shadow-2xl;
+  }
+  
+  .glass-panel-hover {
+    @apply hover:bg-slate-800/80 hover:border-cyan-400/50 hover:shadow-cyan-400/20 transition-all duration-300;
+  }
+}
